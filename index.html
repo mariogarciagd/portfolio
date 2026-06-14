@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Portfolio - Mario García</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mario García Portfolio</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
@@ -12,67 +13,214 @@
 
 <nav>
   <div><b>Mario García</b></div>
-  <div>
-    <a href="#aboutMe">About Me</a>
+
+  <div class="nav-links">
+    <a href="#aboutMe">About</a>
     <a href="#projects">Projects</a>
+    <a href="#prototypes">Prototypes</a>
+    <a href="#otherWork">Other Work</a>
+    <a href="#contact">Contact</a>
+
+    <button onclick="toggleTheme()">🌓</button>
   </div>
 </nav>
 
-<div class="hero" id="aboutMe">
-  <h1>Game Designer · Gameplay Programmer · QA Engineer</h1>
-  <p>Designing and building gameplay systems focused on iteration and player experience.</p>
-</div>
+<section class="hero" id="aboutMe">
+  <div class="content">
+    <h1>Mario García</h1>
+    <h2>Game Designer · Gameplay Programmer · QA Engineer</h2>
+    <p>I design gameplay systems focused on clarity, iteration and player experience.</p>
+  </div>
+</section>
 
-<div class="container" id="projects">
+<!-- =========================
+     FEATURED PROJECTS
+========================= -->
 
-  <h2>Featured Projects</h2>
+<section class="container carousel-section" id="projects">
 
-  <div class="card" onclick="window.location.href='ignited-steel.html'">
-    <h3>Ignited Steel</h3>
-    <div class="tags">
-      <span>Game Design</span>
-      <span>Level Design</span>
-      <span>Programming</span>
+  <h2 class="section-title">Featured Projects</h2>
+
+  <div class="carousel-wrapper">
+
+    <div class="section-bg"></div>
+
+    <div class="carousel">
+
+      <button class="arrow left prevBtn">‹</button>
+
+      <div class="carousel-window">
+
+        <div class="flip-card" data-bg="img/ignited-steel.jpg"
+          data-title="Ignited Steel"
+          data-role="Game Designer · Gameplay Programmer"
+          data-overview="Tactical combat system focused on structured decision-making and clarity.">
+
+          <div class="inner">
+            <div class="front"><h3>Ignited Steel</h3></div>
+            <div class="back">
+              <h3>Ignited Steel</h3>
+              <p>Fast mech combat prototype</p>
+              <a href="https://store.steampowered.com/app/1550740/Ignited_Steel_Mech_Tactics/" target="_blank">View on Steam</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card" data-bg="img/hopebringers.jpg"
+          data-title="Hopebringers"
+          data-role="Game Designer · Narrative"
+          data-overview="Narrative RPG prototype with tactical systems.">
+
+          <div class="inner">
+            <div class="front"><h3>Hopebringers</h3></div>
+            <div class="back">
+              <h3>Hopebringers</h3>
+              <p>RPG prototype</p>
+              <a href="https://store.steampowered.com/app/1298740/Hopebringers/" target="_blank">View on Steam</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card" data-bg="img/loop-sorcery.jpg"
+          data-title="Loop'n Sorcery"
+          data-role="Gameplay Programmer"
+          data-overview="Time loop combat system.">
+
+          <div class="inner">
+            <div class="front"><h3>Loop'n Sorcery</h3></div>
+            <div class="back">
+              <h3>Loop'n Sorcery</h3>
+              <p>Time loop mechanics</p>
+              <a href="https://yokaicade.itch.io/loop-sorcery" target="_blank">View on Itch.io</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card" data-bg="img/biohardzard.jpg"
+          data-title="Biohardzard"
+          data-role="Game Designer"
+          data-overview="Survival horror prototype.">
+
+          <div class="inner">
+            <div class="front"><h3>Biohardzard</h3></div>
+            <div class="back">
+              <h3>Biohardzard</h3>
+              <p>Horror prototype</p>
+              <a href="https://capasito.itch.io/biohardzard" target="_blank">View on Itch.io</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card" data-bg="img/project-catalepsy.jpg"
+          data-title="Project Catalepsy"
+          data-role="Game Designer · Team Lead"
+          data-overview="Survival horror multiplayer project.">
+
+          <div class="inner">
+            <div class="front"><h3>Project Catalepsy</h3></div>
+            <div class="back">
+              <h3>Project Catalepsy</h3>
+              <p>Online horror project</p>
+              <a href="https://catalepsygame.com/" target="_blank">View Webpage</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <button class="arrow right nextBtn">›</button>
+
     </div>
-    <p>Tactical combat system focused on strategic gameplay.</p>
-    <a class="button" href="ignited-steel.html">View Case Study</a>
   </div>
 
-  <div class="card" onclick="window.location.href='hopebringers.html'">
-    <h3>Hopebringers</h3>
-    <div class="tags">
-      <span>Game Design</span>
-	  <span>Level Design</span>
-	  <span>Programming</span>
-      <span>QA</span>
-    </div>
-    <p>Turn-based tactical system with deep mechanics.</p>
-    <a class="button" href="hopebringers.html">View Case Study</a>
+  <div class="project-detail" id="projectDetail">
+    <h2 id="detailTitle"></h2>
+    <p id="detailRole"></p>
+
+    <h3>Overview</h3>
+    <p id="detailOverview"></p>
+
+    <h3>My Contribution</h3>
+    <ul>
+      <li>Designed core gameplay systems</li>
+      <li>Implemented mechanics in-engine</li>
+      <li>Iterated based on playtesting</li>
+    </ul>
   </div>
 
-  <div class="card" onclick="window.location.href='loop-n-sorcery.html'">
-    <h3>Loop'n Sorcery</h3>
-    <div class="tags">
-      <span>Game Jam</span>
-      <span>Game Design</span>
-	  <span>Programming</span>
+</section>
+
+<!-- =========================
+     OTHER PROJECTS (SIN PANEL)
+========================= -->
+
+<section class="container" id="otherProjects">
+
+  <h2 class="section-title">Other Projects</h2>
+
+  <div class="carousel-wrapper">
+
+    <div class="section-bg"></div>
+
+    <div class="carousel">
+
+      <button class="arrow left prevBtn">‹</button>
+
+      <div class="carousel-window">
+
+        <div class="flip-card" data-bg="img/ignited-steel.jpg">
+          <div class="inner">
+            <div class="front"><h3>Gravity Loop</h3></div>
+            <div class="back">
+              <h3>Gravity Loop</h3>
+              <p>Prototype mechanic test</p>
+              <a href="#" target="_blank">Download</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card" data-bg="img/hopebringers.jpg">
+          <div class="inner">
+            <div class="front"><h3>Combat Sandbox</h3></div>
+            <div class="back">
+              <h3>Combat Sandbox</h3>
+              <p>Gameplay prototype system</p>
+              <a href="#" target="_blank">Download</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card" data-bg="img/loop-sorcery.jpg">
+          <div class="inner">
+            <div class="front"><h3>AI Testbed</h3></div>
+            <div class="back">
+              <h3>AI Testbed</h3>
+              <p>Behavior system prototype</p>
+              <a href="#" target="_blank">Download</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <button class="arrow right nextBtn">›</button>
+
     </div>
-    <p>Prototype exploring looping magic systems.</p>
-    <a class="button" href="loop-n-sorcery.html">View Case Study</a>
   </div>
 
-  <div class="card" onclick="window.location.href='biohardzard.html'">
-    <h3>BIOHARDZARD</h3>
-    <div class="tags">
-      <span>Game Jam</span>
-	  <span>Game Design</span>
-      <span>Programming</span>
-    </div>
-    <p>Survival action prototype built in game jam.</p>
-    <a class="button" href="biohardzard.html">View Case Study</a>
-  </div>
+</section>
 
-</div>
+<section class="container" id="contact">
+  <div class="content">
+
+    <h2>Contact</h2>
+
+    <a class="button" href="mailto:mariogarciagd@gmail.com">
+      Send Email
+    </a>
+
+  </div>
+</section>
 
 <script src="script.js"></script>
 </body>
