@@ -67,8 +67,8 @@ carousels.forEach(wrapper => {
     resetFlips();
     updateBackground();
 
-    if (isFeatured) {
-      closePanel();
+    if (isFeatured) 
+	{
       isFlipped = false;
     }
   }

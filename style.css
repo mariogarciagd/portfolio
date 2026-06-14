@@ -19,11 +19,7 @@ nav {
 }
 
 .hero {
-  padding: 120px 80px;
-}
-
-.container {
-  padding: 80px 100px;
+	text-align: center;
 }
 
 .content {
@@ -44,7 +40,7 @@ nav {
 }
 
 /* =========================
-   CARRUSEL BASE (REUTILIZABLE)
+   CARRUSEL BASE
 ========================= */
 
 .carousel-section {
@@ -80,7 +76,7 @@ nav {
   border-radius: 20px;
   background-size: cover;
   background-position: center;
-  opacity: 0.55;
+  opacity: 0.65;
   box-shadow: 0 40px 120px rgba(0,0,0,0.65);
   transition: all 0.5s ease;
 }
@@ -202,6 +198,6 @@ nav {
 
 .project-detail.active {
   display: flex;
-  transform: translateY(0);
+  transform: translateY(10px);
   opacity: 1;
 }
