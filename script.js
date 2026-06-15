@@ -188,6 +188,7 @@ function openPanel(card) {
   }
 
   positionCards();
-  startAuto();
   next();
+  startAuto();
+  
 });
