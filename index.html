@@ -16,12 +16,9 @@
 
   <div class="nav-links">
     <a href="#aboutMe">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#prototypes">Prototypes</a>
-    <a href="#otherWork">Other Work</a>
+    <a href="#projects">Featured</a>
+    <a href="#otherProjects">Other Projects</a>
     <a href="#contact">Contact</a>
-
-    <button onclick="toggleTheme()">🌓</button>
   </div>
 </nav>
 
@@ -33,10 +30,26 @@
   </div>
 </section>
 
-<!-- =========================
-     FEATURED PROJECTS
-========================= -->
+<section class="about-section">
 
+  <h2>About Me</h2>
+
+  <p>
+    I'm a Game Designer and Gameplay Programmer focused on creating
+    systems that improve player decision-making, clarity and long-term
+    engagement.
+
+    Throughout my projects I've worked on combat systems,
+    progression mechanics, balancing, QA processes and
+    iterative design workflows.
+
+    My goal is always to bridge design and implementation
+    to create experiences that feel intuitive and satisfying.
+  </p>
+
+</section>
+
+<!-- FEATURED PROJECTS -->
 <section class="container carousel-section" id="projects">
 
   <h2 class="section-title">Featured Projects</h2>
@@ -51,11 +64,13 @@
 
       <div class="carousel-window">
 
-        <div class="flip-card" data-bg="img/ignited-steel.jpg"
+        <div class="flip-card"
+          data-bg="img/ignited-steel.jpg"
           data-title="Ignited Steel"
-          data-role="Game Designer · Gameplay Programmer"
-          data-overview="Tactical combat system focused on structured decision-making and clarity.">
-
+          data-role="Game Designer · Gameplay Programmer · QA Tester"
+          data-overview="Tactical mech combat prototype focused on structured decision-making and clarity of systems."
+          data-resp="Designed combat systems;Implemented gameplay mechanics in Unity;Balanced player feedback through QA testing"
+        >
           <div class="inner">
             <div class="front"><h3>Ignited Steel</h3></div>
             <div class="back">
@@ -66,11 +81,13 @@
           </div>
         </div>
 
-        <div class="flip-card" data-bg="img/hopebringers.jpg"
+        <div class="flip-card"
+          data-bg="img/hopebringers.jpg"
           data-title="Hopebringers"
-          data-role="Game Designer · Narrative"
-          data-overview="Narrative RPG prototype with tactical systems.">
-
+          data-role="Game Designer · Gameplay Programmer · QA Tester"
+          data-overview="RPG prototype with tactical systems and structured combat design."
+          data-resp="Designed turn combat;Implemented game mechanics;QA testing and iteration on gameplay balance"
+        >
           <div class="inner">
             <div class="front"><h3>Hopebringers</h3></div>
             <div class="back">
@@ -81,11 +98,13 @@
           </div>
         </div>
 
-        <div class="flip-card" data-bg="img/loop-sorcery.jpg"
+        <div class="flip-card"
+          data-bg="img/loop-sorcery.jpg"
           data-title="Loop'n Sorcery"
-          data-role="Gameplay Programmer"
-          data-overview="Time loop combat system.">
-
+          data-role="Game Designer · Gameplay Programmer"
+          data-overview="Lazo mechanic combat system focused on experimentation and arcade gameplay."
+          data-resp="Implemented mechanics in C#;Designed gameplay iteration loops;Tested system edge cases"
+        >
           <div class="inner">
             <div class="front"><h3>Loop'n Sorcery</h3></div>
             <div class="back">
@@ -96,11 +115,13 @@
           </div>
         </div>
 
-        <div class="flip-card" data-bg="img/biohardzard.jpg"
+        <div class="flip-card"
+          data-bg="img/biohardzard.jpg"
           data-title="Biohardzard"
-          data-role="Game Designer"
-          data-overview="Survival horror prototype.">
-
+          data-role="Game Designer · Gameplay Programmer"
+          data-overview="Action roguelike with topdown camera"
+          data-resp="Designed game mechanics;Balanced enemy encounters;QA bug testing and iteration"
+        >
           <div class="inner">
             <div class="front"><h3>Biohardzard</h3></div>
             <div class="back">
@@ -111,11 +132,13 @@
           </div>
         </div>
 
-        <div class="flip-card" data-bg="img/project-catalepsy.jpg"
+        <div class="flip-card"
+          data-bg="img/project-catalepsy.jpg"
           data-title="Project Catalepsy"
-          data-role="Game Designer · Team Lead"
-          data-overview="Survival horror multiplayer project.">
-
+          data-role="Game Designer · Gameplay Programmer"
+          data-overview="Roguelike project with gore visuals"
+          data-resp="Implemented basic mechanics;Coordinated team production tasks;Designed multiplayer systems"
+        >
           <div class="inner">
             <div class="front"><h3>Project Catalepsy</h3></div>
             <div class="back">
@@ -140,20 +163,20 @@
     <h3>Overview</h3>
     <p id="detailOverview"></p>
 
-    <h3>My Contribution</h3>
+    <h3>Responsibilities</h3>
+    <ul id="detailResponsibilities"></ul>  
+
+    <h3>Tools</h3>
     <ul>
-      <li>Designed core gameplay systems</li>
-      <li>Implemented mechanics in-engine</li>
-      <li>Iterated based on playtesting</li>
+      <li>Unity Engine · C#</li>
+      <li>Gameplay systems design</li>
+      <li>Bug tracking & iteration workflows</li>
     </ul>
   </div>
 
 </section>
 
-<!-- =========================
-     OTHER PROJECTS (SIN PANEL)
-========================= -->
-
+<!-- OTHER PROJECTS -->
 <section class="container" id="otherProjects">
 
   <h2 class="section-title">Other Projects</h2>
@@ -168,38 +191,59 @@
 
       <div class="carousel-window">
 
-        <div class="flip-card" data-bg="img/ignited-steel.jpg">
+        <div class="flip-card"
+          data-bg="img/perfectCuts.jpg"
+        >
           <div class="inner">
-            <div class="front"><h3>Gravity Loop</h3></div>
+            <div class="front"><h3>Perfect Cuts</h3></div>
             <div class="back">
-              <h3>Gravity Loop</h3>
-              <p>Prototype mechanic test</p>
-              <a href="#" target="_blank">Download</a>
+              <h3>Perfect Cuts</h3>
+              <p>Prototype made for test new mechanics</p>
+              <a href="builds/PerfectCuts.zip" download class="download-btn">Download</a>
             </div>
           </div>
         </div>
 
-        <div class="flip-card" data-bg="img/hopebringers.jpg">
+        <div class="flip-card"
+          data-bg="img/eongate.jpg""
+        >
           <div class="inner">
-            <div class="front"><h3>Combat Sandbox</h3></div>
+            <div class="front"><h3>Eonclock</h3></div>
             <div class="back">
-              <h3>Combat Sandbox</h3>
-              <p>Gameplay prototype system</p>
-              <a href="#" target="_blank">Download</a>
+              <h3>Eonclock</h3>
+              <p>Prototype made in Eongate</p>
+              <a href="builds/Eongate.zip" download class="download-btn">Download</a>
+            </div>
+          </div>
+        </div>
+		
+		<div class="flip-card"
+          data-bg="img/defend-farm.jpg""
+        >
+          <div class="inner">
+            <div class="front"><h3>Defend The Farm</h3></div>
+            <div class="back">
+              <h3>Defend The Farm</h3>
+              <p>Defend the farm while you improve it</p>
+              <a href="builds/DefendTheFarm.zip" download class="download-btn">Download</a>
             </div>
           </div>
         </div>
 
-        <div class="flip-card" data-bg="img/loop-sorcery.jpg">
+      
+        <div class="flip-card"
+          data-bg="img/alone-space.jpg""
+        >
           <div class="inner">
-            <div class="front"><h3>AI Testbed</h3></div>
+            <div class="front"><h3>Alone in Space</h3></div>
             <div class="back">
-              <h3>AI Testbed</h3>
-              <p>Behavior system prototype</p>
-              <a href="#" target="_blank">Download</a>
+              <h3>Alone in Space</h3>
+              <p>Prototype made in an Unity course</p>
+              <a href="builds/AloneInSpace.zip" download class="download-btn">Download</a>
             </div>
           </div>
         </div>
+
 
       </div>
 
@@ -210,10 +254,15 @@
 
 </section>
 
+
 <section class="container" id="contact">
   <div class="content">
 
-    <h2>Contact</h2>
+    <h2 class="section-title">Contact</h2>
+
+    <a class="contact-email" href="mailto:mariogarciagd@gmail.com">
+      mariogarciagd@gmail.com
+    </a>
 
     <a class="button" href="mailto:mariogarciagd@gmail.com">
       Send Email
@@ -221,6 +270,10 @@
 
   </div>
 </section>
+
+<footer>
+  © 2026 Mario García. All rights reserved.
+</footer>
 
 <script src="script.js"></script>
 </body>

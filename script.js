@@ -27,15 +27,29 @@ carousels.forEach(wrapper => {
     cards.forEach(c => c.classList.remove("flipped"));
   }
 
-  function openPanel(card) {
-    if (!panel) return;
+function openPanel(card) {
+  if (!panel) return;
 
-    document.getElementById("detailTitle").textContent = card.dataset.title || "";
-    document.getElementById("detailRole").textContent = card.dataset.role || "";
-    document.getElementById("detailOverview").textContent = card.dataset.overview || "";
+  document.getElementById("detailTitle").textContent = card.dataset.title || "";
+  document.getElementById("detailRole").textContent = card.dataset.role || "";
+  document.getElementById("detailOverview").textContent = card.dataset.overview || "";
 
-    panel.classList.add("active");
+  const list = document.getElementById("detailResponsibilities");
+
+  if (list) {
+    list.innerHTML = (card.dataset.resp || "")
+      .split(";")
+      .map(r => `<li>${r}</li>`)
+      .join("");
   }
+
+  panel.classList.add("active");
+
+ /* panel.scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  }); */
+}
 
   function closePanel() {
     if (!panel) return;
