@@ -297,7 +297,6 @@ body {
 
 .project-detail.active {
   display: flex;
-  transform: translateY();
   opacity: 1;
 }
 
@@ -344,28 +343,80 @@ footer {
 
 @media (max-width: 900px) {
 
+  body {
+    padding-top: 110px;
+  }
+
   nav {
     flex-direction: column;
     gap: 10px;
+    padding: 12px;
   }
 
   .nav-links {
     flex-wrap: wrap;
     justify-content: center;
+    gap: 12px;
+    font-size: 14px;
+  }
+
+  .hero {
+    padding: 80px 20px 60px;
+  }
+
+  .hero h2 {
+    font-size: 18px;
+  }
+
+  .about-section {
+    margin: 40px 15px;
+    padding: 20px;
+  }
+
+  .section-title {
+    margin-top: 40px;
   }
 
   .section-bg {
-    width: 90%;
+    width: 95%;
+    height: 260px;
+  }
+
+  .carousel {
     height: 320px;
   }
 
   .flip-card {
-    width: 260px;
-    height: 180px;
+    width: 240px;
+    height: 160px;
+  }
+
+  .arrow {
+    font-size: 22px;
+    padding: 8px 12px;
+  }
+
+  .arrow.left {
+    left: 10px;
+    margin-left: 0;
+  }
+
+  .arrow.right {
+    right: 10px;
+    margin-right: 0;
   }
 
   .project-detail {
-    margin: 20px;
+    margin: 15px;
+    padding: 18px;
+  }
+
+  .project-detail ul {
+    padding-left: 20px;
+  }
+
+  footer {
+    margin-top: 50px;
   }
 }
 

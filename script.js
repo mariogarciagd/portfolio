@@ -16,7 +16,7 @@ carousels.forEach(wrapper => {
   let userInteracting = false;
   let isFlipped = false;
 
-  const spacing = 300;
+  const spacing = window.innerWidth < 900 ? 160 : 300;
 
   function updateBackground() {
     if (!bg) return;
@@ -156,7 +156,24 @@ function openPanel(card) {
         return;
       }
 
-      card.classList.toggle("flipped");
+      if (window.innerWidth < 900) 
+	  {
+
+	if (isFeatured) {
+
+		isFlipped = true;
+		openPanel(card);
+
+		panel.scrollIntoView({
+		behavior: "smooth",
+		block: "start"
+		});
+		}
+
+		return;
+	  }
+
+card.classList.toggle("flipped");
 
       if (card.classList.contains("flipped")) {
 
@@ -175,6 +192,30 @@ function openPanel(card) {
 
     });
 
+	
+	let touchStartX = 0;
+
+	card.addEventListener("touchstart", e => {
+	touchStartX = e.changedTouches[0].clientX;
+	}, { passive: true });
+
+	card.addEventListener("touchend", e => {
+
+	const touchEndX = e.changedTouches[0].clientX;
+	const diff = touchEndX - touchStartX;
+
+	if (Math.abs(diff) < 50) return;
+
+	restartAuto();
+
+	if (diff < 0) {
+		next();
+	} else {
+		prev();
+	}
+
+	}, { passive: true });
+	
     card.addEventListener("mouseenter", () => userInteracting = true);
     card.addEventListener("mouseleave", () => userInteracting = false);
   });
@@ -188,7 +229,7 @@ function openPanel(card) {
   }
 
   positionCards();
-  next();
   startAuto();
-  
+  next();
+  prev();
 });
